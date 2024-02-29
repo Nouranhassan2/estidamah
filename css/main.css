@@ -16,10 +16,11 @@ body {
 
 header {
   background-image: url("../img/header-bg.jpg");
+  max-height: 18vh;
   height: 18vh;
   background-repeat: no-repeat;
   background-size: contain;
-  border-bottom: 6px solid #dcb97a;
+
   width: 100%;
   background-position: center center;
   overflow: hidden;
@@ -27,6 +28,15 @@ header {
   left: 0;
   margin: 0;
   padding: 0;
+}
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px; /* Adjust the border height as needed */
+  background-color: #dcb97a;
 }
 
 @media (max-width: 768px) {
@@ -84,7 +94,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 60px;
+  font-size: 50px;
   opacity: 0;
   transition: 0.5s opacity;
   overflow: hidden;
@@ -206,3 +216,44 @@ span {
   }
 }
 /*  */
+@media (min-width: 763px) and (max-width: 991px) {
+  header {
+    height: 82px;
+  }
+}
+@media (max-width: 653px) {
+  header {
+    height: 51px;
+  }
+}
+@media (max-width: 352px) {
+  header {
+    height: 35px;
+  }
+}
+.layer {
+  background-color: #1abc9ce6;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+figure:hover .layer {
+  opacity: 1;
+}
+
+.overlayImage {
+  background-color: rgb(13 110 253 / 20%);
+  inset: 0;
+  z-index: 1;
+}
+.overlayImage .w-35 {
+  width: 35%;
+}
+.overlayImage figure .layerBoxImage {
+  inset: 0;
+}
+.layerBoxImage i {
+  background-color: #2c3e50;
+  border: 3px solid #fff;
+  cursor: pointer;
+}

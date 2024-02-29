@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const innerElements = document.querySelectorAll(".inner");
+  const figures = document.querySelectorAll("figure");
   const overlay = document.querySelector(".overlay");
 
-  innerElements.forEach((inner) => {
-    inner.addEventListener("click", () => {
-      const image = inner.querySelector(".image-popup");
-      const targetId = image.getAttribute("data-target");
+  figures.forEach((figure) => {
+    figure.addEventListener("click", () => {
+      const targetId = figure.getAttribute("data-target");
       const popup = document.querySelector(targetId);
 
       overlay.style.display = "block";
